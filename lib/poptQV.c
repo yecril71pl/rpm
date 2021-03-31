@@ -219,6 +219,8 @@ struct poptOption rpmQVFilePoptTable[] = {
 struct poptOption rpmQueryPoptTable[] = {
  { NULL, '\0', POPT_ARG_CALLBACK | POPT_CBFLAG_INC_DATA | POPT_CBFLAG_CONTINUE,
 	queryArgCallback, 0, NULL, NULL },
+ { "query", 'q', 0, 0, 'q',
+	N_("query packages, in particular:"), NULL },
  { "dump", '\0', 0, 0, POPT_DUMP,
 	N_("dump basic file information"), NULL },
  { NULL, 'i', POPT_ARGFLAG_DOC_HIDDEN, 0, 'i',
