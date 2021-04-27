@@ -134,6 +134,12 @@ static void queryArgCallback(poptContext con,
     QVA_t qva = &rpmQVKArgs;
 
     switch (opt->val) {
+    case 'q':	/* from --query, -q */
+    case 'Q':	/* from --querytags (handled by poptALL) */
+	if (qva->qva_mode == '\0' || strchr("qQ ", qva->qva_mode)) {
+	    qva->qva_mode = opt->val;
+	}
+	break;
     case 'l': qva->qva_flags |= QUERY_FOR_LIST; break;
     case 's': qva->qva_flags |= QUERY_FOR_STATE | QUERY_FOR_LIST;
 	break;
