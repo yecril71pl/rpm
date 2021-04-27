@@ -38,7 +38,6 @@ static void rpmQVSourceArgCallback( poptContext con,
     rpmQVSources sources = qva->qva_source;;
 
     switch (opt->val) {
-    case 'q':	/* from --query, -q */
     case 'Q':	/* from --querytags (handled by poptALL) */
     case 'V':	/* from --verify, -V */
 	if (qva->qva_mode == '\0' || strchr("qQ ", qva->qva_mode)) {
@@ -135,7 +134,6 @@ static void queryArgCallback(poptContext con,
 
     switch (opt->val) {
     case 'q':	/* from --query, -q */
-    case 'Q':	/* from --querytags (handled by poptALL) */
 	if (qva->qva_mode == '\0' || strchr("qQ ", qva->qva_mode)) {
 	    qva->qva_mode = opt->val;
 	}
