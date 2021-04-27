@@ -30,6 +30,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: output-test-log
-        path: output.log
+        path: tests/rpmtests.log
     - name: make distcheck
       run: make distcheck
