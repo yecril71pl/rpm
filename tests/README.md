@@ -12,24 +12,24 @@ The number of tests performed depends on features enabled at configure time,
 at least `--with-`/`--without-lua` and `--enable-`/`--disable-python`.
 See also the [INSTALL](../INSTALL) file for more information.
 
-To run *single tests*, you can run the commands
+To run *single tests*, you can run the commands:
 
     make populate_testing && ./rpmtests $NNN $MMM ...
 
-where _NNN_ and _MMM_ are the numbers of the tests to be run. Use the command
+where _NNN_ and _MMM_ are the numbers of the tests to be run.
+
+To get the *list of available tests*, use the command:
 
       ./rpmtests -l
 
-to get the list of available tests.
-
-You can also select *tests by keywords* used in their description by using the command
+You can also select *tests by keywords* used in their description by using the command:
 
      ./rpmtests -k $KEYWORD
 
 Use multiple `-k` parameters to have tests with different keywords run.
 Use `-k $KEYWORD1,$KEYWORD2` to execute tests matching both _KEYWORD1_ and _KEYWORD2_.
 
-See the output of the command
+See the output of the command:
 
 	./rpmtests --help
 
