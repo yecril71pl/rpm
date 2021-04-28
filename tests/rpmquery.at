@@ -19,6 +19,24 @@
 AT_BANNER([RPM queries])
 
 # ------------------------------
+AT_SETUP([rpm])
+AT_KEYWORDS([query])
+AT_CHECK([
+RPMDB_INIT
+runroot rpm 
+],
+[1],
+[],
+[stderr])
+AT_CHECK([
+grep -Fq '[-q' stderr
+],
+[0],
+[],
+[])
+AT_CLEANUP
+
+# ------------------------------
 AT_SETUP([rpm --qf -p *.i386.rpm])
 AT_KEYWORDS([query])
 AT_CHECK([
