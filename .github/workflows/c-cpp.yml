@@ -26,6 +26,7 @@ jobs:
       run: make 
     - name: make check
       run: make check && ! ./rpm 2>/tmp/rpm.txt && grep -F '[-q' /tmp/rpm.txt
+      continue-on-error: true
     - name: Upload test log
       uses: actions/upload-artifact@v2
       with:
