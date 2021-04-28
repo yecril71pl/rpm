@@ -29,7 +29,7 @@ runroot rpm
 [],
 [stderr])
 AT_CHECK([
-grep -Fq '[-q' stderr
+grep -Fq '[-q|--query]' stderr
 ],
 [0],
 [],
